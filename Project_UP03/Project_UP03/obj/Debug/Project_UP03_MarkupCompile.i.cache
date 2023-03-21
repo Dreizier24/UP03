@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\App.xaml
-2-1348464969
-2485412623
-15-2049069403
+41602771091
+2269199887
+231646903859
 182009622987
-MainWindow.xaml;View\ApplicationWindow.xaml;
+View\AdminWindow.xaml;View\MainWindow.xaml;View\ApplicationWindow.xaml;View\WorkerWindow.xaml;
 
-False
+True
 

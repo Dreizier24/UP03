@@ -1,5 +1,4 @@
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.csproj.AssemblyReference.cache
-E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\MainWindow.g.cs
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\ApplicationWindow.g.cs
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\App.g.cs
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03_Content.g.cs
@@ -13,7 +12,6 @@ E:\ProektVS2\UP03\Project_UP03\Project_UP03\bin\Debug\EntityFramework.SqlServer.
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\bin\Debug\EntityFramework.xml
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\bin\Debug\EntityFramework.SqlServer.xml
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\bin\Debug\ru\EntityFramework.resources.dll
-E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\MainWindow.baml
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\ApplicationWindow.baml
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.g.resources
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.Properties.Resources.resources
@@ -22,3 +20,9 @@ E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.csproj.CoreCo
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.csproj.CopyComplete
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.exe
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\Project_UP03.pdb
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\MainWindow.g.cs
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\MainWindow.baml
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AdminWindow.g.cs
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\WorkerWindow.g.cs
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AdminWindow.baml
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\WorkerWindow.baml

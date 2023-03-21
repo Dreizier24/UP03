@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="771bcc29a3ce416b8a882bdf0dce5fdb" Name="Diagram1">
+        <EntityTypeShape EntityType="HelpDeskDBModel.Admin" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.Post" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.Task" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.TaskStatus" Width="1.5" PointX="9.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.User" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.Worker" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__Admin__UserId__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__Task__AdminId__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__User__PostId__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__Task__TaskStatus__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__Task__WorkertId__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpDeskDBModel.FK__Worker__UserId__2C3393D0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -10,33 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project_UP03.EntityDB;
 using Project_UP03.ViewModel;
 
-namespace Project_UP03
+namespace Project_UP03.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для WorkerWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WorkerWindow : Window
     {
-        public MainWindow()
+        public WorkerWindow(User user)
         {
             InitializeComponent();
 
-            this.DataContext = new ViewModel.Auth();
-        }
-
-
-        private void SignIn_Click(object sender, RoutedEventArgs e)
-        {
-            (DataContext as Auth).AuthInApp();
-        }
-
-        private void SignUpBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = new AppMainWindow(user);
         }
     }
 }

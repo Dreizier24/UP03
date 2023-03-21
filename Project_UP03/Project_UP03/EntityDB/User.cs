@@ -14,6 +14,13 @@ namespace Project_UP03.EntityDB
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Admin = new HashSet<Admin>();
+            this.Worker = new HashSet<Worker>();
+        }
+    
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
@@ -21,5 +28,13 @@ namespace Project_UP03.EntityDB
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public Nullable<int> PostId { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Admin> Admin { get; set; }
+        public virtual Post Post { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Worker> Worker { get; set; }
     }
 }

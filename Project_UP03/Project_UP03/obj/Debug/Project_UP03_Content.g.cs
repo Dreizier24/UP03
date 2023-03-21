@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entitydb/authdb.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entitydb/authdb.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entitydb/helpdeskdbstorage.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entitydb/helpdeskdbstorage.tt")]
 
 

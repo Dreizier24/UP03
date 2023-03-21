@@ -64,32 +64,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="EntityDB\AuthDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AuthDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityDB\AuthDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AuthDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityDB\AuthDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AuthDB.edmx</DependentUpon>
+    <Compile Include="EntityDB\Admin.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityDB\DBStorage.cs" />
+    <Compile Include="EntityDB\HelpDeskDBStorage.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskDBStorage.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\HelpDeskDBStorage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\HelpDeskDBStorage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HelpDeskDBStorage.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\Post.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\sysdiagrams.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\Task.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\TaskStatus.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityDB\User.cs">
-      <DependentUpon>AuthDB.tt</DependentUpon>
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityDB\Worker.cs">
+      <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AppMainWindow.cs" />
     <Compile Include="ViewModel\Auth.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="View\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ApplicationWindow.xaml.cs">
       <DependentUpon>ApplicationWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="View\WorkerWindow.xaml.cs">
+      <DependentUpon>WorkerWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -97,11 +125,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\ApplicationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,12 +156,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="EntityDB\AuthDB.edmx">
+    <EntityDeploy Include="EntityDB\HelpDeskDBStorage.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AuthDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>HelpDeskDBStorage.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EntityDB\AuthDB.edmx.diagram">
-      <DependentUpon>AuthDB.edmx</DependentUpon>
+    <None Include="EntityDB\HelpDeskDBStorage.edmx.diagram">
+      <DependentUpon>HelpDeskDBStorage.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -148,15 +180,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityDB\AuthDB.Context.tt">
+    <Content Include="EntityDB\HelpDeskDBStorage.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AuthDB.edmx</DependentUpon>
-      <LastGenOutput>AuthDB.Context.cs</LastGenOutput>
+      <DependentUpon>HelpDeskDBStorage.edmx</DependentUpon>
+      <LastGenOutput>HelpDeskDBStorage.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EntityDB\AuthDB.tt">
+    <Content Include="EntityDB\HelpDeskDBStorage.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AuthDB.edmx</DependentUpon>
-      <LastGenOutput>AuthDB.cs</LastGenOutput>
+      <DependentUpon>HelpDeskDBStorage.edmx</DependentUpon>
+      <LastGenOutput>HelpDeskDBStorage.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
