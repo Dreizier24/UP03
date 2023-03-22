@@ -89,7 +89,7 @@
     <Compile Include="EntityDB\sysdiagrams.cs">
       <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityDB\Task.cs">
+    <Compile Include="EntityDB\TaskProblem.cs">
       <DependentUpon>HelpDeskDBStorage.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityDB\TaskStatus.cs">
@@ -104,6 +104,9 @@
     <Compile Include="ViewModel\AppMainWindow.cs" />
     <Compile Include="ViewModel\Auth.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="View\AddNewUserInfoWindow.xaml.cs">
+      <DependentUpon>AddNewUserInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
     <Compile Include="View\WorkerWindow.xaml.cs">
       <DependentUpon>WorkerWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddNewUserInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

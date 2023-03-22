@@ -28,9 +28,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Task">
-      <EntityTypeMapping TypeName="HelpDeskDBModel.Task">
-        <MappingFragment StoreEntitySet="Task">
+    <EntitySetMapping Name="TaskProblem">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.TaskProblem">
+        <MappingFragment StoreEntitySet="TaskProblem">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
           <ScalarProperty Name="AdminId" ColumnName="AdminId" />

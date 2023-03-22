@@ -28,7 +28,7 @@ namespace Project_UP03.EntityDB
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Post> Post { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Task> Task { get; set; }
+        public virtual DbSet<TaskProblem> TaskProblem { get; set; }
         public virtual DbSet<TaskStatus> TaskStatus { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Worker> Worker { get; set; }

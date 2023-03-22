@@ -12,7 +12,7 @@ namespace Project_UP03.EntityDB
     using System;
     using System.Collections.Generic;
     
-    public partial class Task
+    public partial class TaskProblem
     {
         public int Id { get; set; }
         public Nullable<int> WorkerId { get; set; }

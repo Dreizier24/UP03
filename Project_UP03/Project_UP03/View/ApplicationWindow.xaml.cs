@@ -28,5 +28,16 @@ namespace Project_UP03.View
 
             DataContext = new AppMainWindow(user);
         }
+
+        public void RefreshData()
+        {
+            (DataContext as AppMainWindow).LoadData();
+        }
+
+        private void btnAddNewUser_Click(object sender, RoutedEventArgs e)
+        {
+            var addNUWindow = new AddNewUserInfoWindow(null);
+            addNUWindow.Show();
+        }
     }
 }

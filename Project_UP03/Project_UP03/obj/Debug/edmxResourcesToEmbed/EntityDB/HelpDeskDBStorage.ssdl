@@ -24,7 +24,7 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="Task">
+  <EntityType Name="TaskProblem">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -77,36 +77,36 @@
   </Association>
   <Association Name="FK__Task__AdminId__36B12243">
     <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
-    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <End Role="TaskProblem" Type="Self.TaskProblem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Admin">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Task">
+      <Dependent Role="TaskProblem">
         <PropertyRef Name="AdminId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Task__TaskStatus__37A5467C">
     <End Role="TaskStatus" Type="Self.TaskStatus" Multiplicity="0..1" />
-    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <End Role="TaskProblem" Type="Self.TaskProblem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TaskStatus">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Task">
+      <Dependent Role="TaskProblem">
         <PropertyRef Name="TaskStatusId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Task__WorkertId__35BCFE0A">
     <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
-    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <End Role="TaskProblem" Type="Self.TaskProblem" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Worker">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Task">
+      <Dependent Role="TaskProblem">
         <PropertyRef Name="WorkerId" />
       </Dependent>
     </ReferentialConstraint>
@@ -139,7 +139,7 @@
     <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskProblem" EntityType="Self.TaskProblem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaskStatus" EntityType="Self.TaskStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
@@ -149,15 +149,15 @@
     </AssociationSet>
     <AssociationSet Name="FK__Task__AdminId__36B12243" Association="Self.FK__Task__AdminId__36B12243">
       <End Role="Admin" EntitySet="Admin" />
-      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskProblem" EntitySet="TaskProblem" />
     </AssociationSet>
     <AssociationSet Name="FK__Task__TaskStatus__37A5467C" Association="Self.FK__Task__TaskStatus__37A5467C">
       <End Role="TaskStatus" EntitySet="TaskStatus" />
-      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskProblem" EntitySet="TaskProblem" />
     </AssociationSet>
     <AssociationSet Name="FK__Task__WorkertId__35BCFE0A" Association="Self.FK__Task__WorkertId__35BCFE0A">
       <End Role="Worker" EntitySet="Worker" />
-      <End Role="Task" EntitySet="Task" />
+      <End Role="TaskProblem" EntitySet="TaskProblem" />
     </AssociationSet>
     <AssociationSet Name="FK__User__PostId__45F365D3" Association="Self.FK__User__PostId__45F365D3">
       <End Role="Post" EntitySet="Post" />

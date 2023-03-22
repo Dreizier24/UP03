@@ -26,3 +26,5 @@ E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AdminWindow.g.cs
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\WorkerWindow.g.cs
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AdminWindow.baml
 E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\WorkerWindow.baml
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AddNewUserInfoWindow.g.cs
+E:\ProektVS2\UP03\Project_UP03\Project_UP03\obj\Debug\View\AddNewUserInfoWindow.baml

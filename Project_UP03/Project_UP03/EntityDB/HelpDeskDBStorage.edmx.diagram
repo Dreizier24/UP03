@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="771bcc29a3ce416b8a882bdf0dce5fdb" Name="Diagram1">
+      <Diagram DiagramId="a25876e4316940a0a3aff7ea98413187" Name="Diagram1">
         <EntityTypeShape EntityType="HelpDeskDBModel.Admin" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HelpDeskDBModel.Post" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="HelpDeskDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HelpDeskDBModel.Task" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HelpDeskDBModel.TaskStatus" Width="1.5" PointX="9.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.TaskProblem" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpDeskDBModel.TaskStatus" Width="1.5" PointX="9.5" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HelpDeskDBModel.User" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HelpDeskDBModel.Worker" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="HelpDeskDBModel.FK__Admin__UserId__29572725" ManuallyRouted="false" />

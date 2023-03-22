@@ -77,24 +77,31 @@ namespace Project_UP03.ViewModel
             {
                 //MessageBox.Show("Успешно","Авторизация",
                 //        MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                if (status == 1)
+                //if (status == 1)
+                //{
+                //    AdminWindow AdminMV = new AdminWindow(_user);
+                //    AdminMV.Show();
+                //    foreach (Window w in App.Current.Windows)
+                //    {
+                //        if (w.Title == "Login")
+                //            w.Close();
+                //    }
+                //}
+                //else if (status == 2) { 
+                //    WorkerWindow WorkerMV = new WorkerWindow(_user);
+                //    WorkerMV.Show();
+                //    foreach (Window w in App.Current.Windows)
+                //    {
+                //        if (w.Title == "Login")
+                //            w.Close();
+                //    }
+                //}
+                ApplicationWindow AppW = new ApplicationWindow(_user);
+                AppW.Show();
+                foreach (Window w in App.Current.Windows)
                 {
-                    AdminWindow AdminMV = new AdminWindow(_user);
-                    AdminMV.Show();
-                    foreach (Window w in App.Current.Windows)
-                    {
-                        if (w.Title == "Login")
-                            w.Close();
-                    }
-                }
-                else if (status == 2) { 
-                    WorkerWindow WorkerMV = new WorkerWindow(_user);
-                    WorkerMV.Show();
-                    foreach (Window w in App.Current.Windows)
-                    {
-                        if (w.Title == "Login")
-                            w.Close();
-                    }
+                    if (w.Title == "Login")
+                        w.Close();
                 }
             }
             else {

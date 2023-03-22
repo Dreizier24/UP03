@@ -5,24 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_UP03.View"
         mc:Ignorable="d"
-        Title="WorkerWindow" Height="800" Width="1400" WindowStartupLocation="CenterScreen">
+        MinHeight="100" MinWidth="100" ResizeMode="NoResize"
+        Title="WorkerWindow" Height="350" Width="400" WindowStartupLocation="CenterScreen" Background="#FF3A3F58">
     <Grid>
-        <DataGrid
-            IsReadOnly="True"
-            AutoGenerateColumns="False"
-            ItemsSource="{Binding User}">
-            <DataGrid.Columns>
-                <DataGridTextColumn
-                    Header="Имя"
-                    Binding="{Binding FirstName}"
-                    />
-                <DataGridTextColumn
-                    Header="Фамилия"
-                    Binding="{Binding LastName}" />
-                <DataGridTextColumn
-                    Header="Отчество"
-                    Binding="{Binding MiddleName}" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#FFEE6A59" Opacity="1">
+            <StackPanel
+            Opacity="1"
+            HorizontalAlignment="Left"
+            Orientation="Horizontal"
+            Grid.Row="0">
+                <Label Content="{Binding FirstName}" Foreground="#FFECE6CD"/>
+                <Label Content="{Binding MiddleName}" Foreground="#FFECE6CD"/>
+                <Label Content="{Binding LastName}" Foreground="#FFECE6CD"/>
+            </StackPanel>
+        </Border>
+
+        
+
+        <StackPanel
+            Margin="10"
+            Grid.Row="1">
+            <Label
+                Content="Ваш Id" Foreground="#FFF9AC67"/>
+            <TextBox
+                Text="{Binding WorkerId}" />
+        </StackPanel>
+
+
+        <StackPanel
+            Grid.Row="2"
+            Margin="10">
+            <Label
+                Content="Описание прооблемы" Foreground="#FFF9AC67"/>
+            <TextBox
+                Text="{Binding TaskText}" Height="150"/>
+        </StackPanel>
+
+        
+
+        <Button
+            Click="btnSend_Click"
+            Margin="10"
+            Grid.Row="3"
+            Content="Отправить"
+            Name="btnSend"
+            Background="#FFEE6A59"
+            Foreground="#FFECE6CD"/>
+
     </Grid>
 </Window>

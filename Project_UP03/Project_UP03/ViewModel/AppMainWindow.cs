@@ -11,11 +11,40 @@ namespace Project_UP03.ViewModel
 {
     public class AppMainWindow : BaseViewModel
     {
-        //private User _user;
 
         private string _firstName;
         private string _midlleName;
         private string _lastName;
+        private string _email;
+        private string _phoneNumber;
+        private int _postId;
+        private string _login;
+        private string _password;
+
+        private int _userId;
+
+        private int _workerId;
+        private string _taskText;
+        private int _statusId;
+
+        public string Login
+        {
+            get => _login;
+            set
+            {
+                _login = value;
+                OnPropertyChanged(nameof(Login));
+            }
+        }
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }  
 
         public string FirstName
         {
@@ -47,22 +76,79 @@ namespace Project_UP03.ViewModel
             }
         }
 
-        //public AppMainWindow(User user)
-        //{
-        //    FirstName = user.FirstName;
-        //    MiddleName = user.MiddleName;
-        //    LastName = user.LastName;
-        //}
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                _email = value;
+                OnPropertyChanged(nameof(Email));
+            }
+        }
 
-        //private void LoadData()
-        //{
-        //    using (var db = new HelpDeskDBEntities())
-        //    {
-        //        var result = db.User;
-        //    }
-        //}
+        public string PhoneNumber
+        {
+            get => _phoneNumber;
+            set
+            {
+                _phoneNumber = value;
+                OnPropertyChanged(nameof(PhoneNumber));
+            }
+        }
+
+        public int postId
+        {
+            get => _postId;
+            set
+            {
+                _postId = value;
+                OnPropertyChanged(nameof(postId));
+            }
+        }
+
+        public int UserId
+        {
+            get => _userId;
+            set
+            {
+                _userId = value;
+                OnPropertyChanged(nameof(UserId));
+            }
+        }
+
+        public int WorkerId
+        {
+            get => _workerId;
+            set
+            {
+                _workerId = value;
+                OnPropertyChanged(nameof(WorkerId));
+            }
+        }
+
+        public string TaskText
+        {
+            get => _taskText;
+            set
+            {
+                _taskText = value;
+                OnPropertyChanged(nameof(TaskText));
+            }
+        }
+
+        public int StatusId
+        {
+            get => _statusId;
+            set
+            {
+                _statusId = value;
+                OnPropertyChanged(nameof(StatusId));
+            }
+        }
 
         private ObservableCollection<User> _user;
+
+        private ObservableCollection<TaskProblem> _task;
 
         public ObservableCollection<User> User
         {
@@ -74,18 +160,39 @@ namespace Project_UP03.ViewModel
             }
         }
 
+        public ObservableCollection<TaskProblem> TaskProblem
+        {
+            get => _task;
+            set
+            {
+                _task = value;
+                OnPropertyChanged(nameof(TaskProblem));
+            }
+        }
+
         public AppMainWindow(User user)
         {
             User = new ObservableCollection<User>();
-
+            TaskProblem = new ObservableCollection<TaskProblem>();
             LoadData();
         }
 
         public void LoadData()
         {
-            var result = DbStorage.DB_s.User.ToList();
+            if (User.Count > 0)
+            {
+                User.Clear();
+            }
+            if (TaskProblem.Count > 0)
+            {
+                TaskProblem.Clear();
+            }
 
-            result.ForEach(elem => User?.Add(elem));
+            var userResult = DbStorage.DB_s.User.ToList();
+            var taskResult = DbStorage.DB_s.TaskProblem.ToList();
+
+            userResult.ForEach(elem => User?.Add(elem));
+            taskResult.ForEach(elem => TaskProblem?.Add(elem));
         }
     }
 }

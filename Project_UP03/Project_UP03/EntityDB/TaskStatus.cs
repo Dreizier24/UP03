@@ -17,13 +17,13 @@ namespace Project_UP03.EntityDB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaskStatus()
         {
-            this.Task = new HashSet<Task>();
+            this.TaskProblem = new HashSet<TaskProblem>();
         }
     
         public int Id { get; set; }
         public string TaskStatusValue { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Task> Task { get; set; }
+        public virtual ICollection<TaskProblem> TaskProblem { get; set; }
     }
 }
