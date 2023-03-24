@@ -11,16 +11,47 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        </Grid>
         <Button 
             Grid.Row="1"
             Name="btnAddNewUser"
             Click="btnAddNewUser_Click"
             Content="Добавить нового пользователя"
             Margin="10"
+            Width="180"
+            HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             />
+            <Button 
+            Grid.Row="1"
+            Name="btnEditUser"
+            Click="btnEditUser_Click"
+            Content="Изменить пользователя"
+                Width="180"
+            Margin="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"   
+            />
+            <Button 
+            Grid.Row="1"
+            Name="btnDeleteUser"
+            Click="btnDeleteUser_Click"
+            Content="Удалить пользователя"
+            Margin="10"
+            Width="180"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            />
+        
 
         <DataGrid
+            SelectedItem="{Binding SelectedUser}"
             Grid.Row="0"
             Margin="10"
             IsReadOnly="True"

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Project_UP03.EntityDB;
 using Project_UP03.View;
 
@@ -11,6 +12,7 @@ namespace Project_UP03.ViewModel
 {
     public class AppMainWindow : BaseViewModel
     {
+        private User _selectedUser;
 
         private string _firstName;
         private string _midlleName;
@@ -26,6 +28,16 @@ namespace Project_UP03.ViewModel
         private int _workerId;
         private string _taskText;
         private int _statusId;
+
+        public User SelectedUser
+        {
+            get => _selectedUser;
+            set
+            {
+                _selectedUser = value;
+                OnPropertyChanged(nameof(SelectedUser));
+            }
+        }
 
         public string Login
         {
@@ -193,6 +205,42 @@ namespace Project_UP03.ViewModel
 
             userResult.ForEach(elem => User?.Add(elem));
             taskResult.ForEach(elem => TaskProblem?.Add(elem));
+        }
+
+        public void DeleteSelectItem()
+        {
+            if (!(SelectedUser is null))
+            {
+                using (var db = new HelpDeskDBEntities())
+                {
+
+                    var result = MessageBox.Show("Вы уверены, что хотите удалить данный элемент?" +
+                        "Это действие невозможно отменить.", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        try
+                        {
+                            var entityForDelete = db.User.Where(elem => elem.ID == SelectedUser.ID).FirstOrDefault();
+
+                            db.User.Remove(entityForDelete);
+
+                            db.SaveChanges();
+
+                            LoadData();
+
+                            MessageBox.Show("Данные успешно удалены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+
+                    }
+
+                }
+            }
         }
     }
 }

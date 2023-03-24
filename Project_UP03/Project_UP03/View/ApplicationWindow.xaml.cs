@@ -39,5 +39,17 @@ namespace Project_UP03.View
             var addNUWindow = new AddNewUserInfoWindow(null);
             addNUWindow.Show();
         }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as AppMainWindow).DeleteSelectItem();
+        }
+
+        private void btnEditUser_Click(object sender, RoutedEventArgs e)
+        {
+            var editUWindow = new AddNewUserInfoWindow((DataContext as AppMainWindow).SelectedUser);
+
+            editUWindow.Show();
+        }
     }
 }

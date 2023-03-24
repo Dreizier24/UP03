@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,10 @@ namespace Project_UP03.View
             {
                 _user = user = new User();
             }
+            else
+            {
+                _user = user;
+            }
 
             this.DataContext = _user;
         }
@@ -49,15 +54,15 @@ namespace Project_UP03.View
             {
                 try
                 {
-                    //var validateResult = ValidateEntity();
+                    var validateResult = ValidateEntity();
 
-                    //if (validateResult != null)
-                    //{
-                    //    MessageBox.Show(validateResult.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
-                    //    return;
-                    //}
+                    if (validateResult.Length>0)
+                    {
+                        MessageBox.Show(validateResult.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
 
-                    db.User.Add(_user);
+                    db.User.AddOrUpdate(_user);
 
                     db.SaveChanges();
 
@@ -66,8 +71,6 @@ namespace Project_UP03.View
                     (Owner as ApplicationWindow)?.RefreshData();
 
                     Owner.Focus();
-
-                    //this.Close();
                 }
                 catch (Exception ex)
                 {
