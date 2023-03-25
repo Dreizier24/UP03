@@ -49,7 +49,6 @@
             HorizontalAlignment="Right"
             />
         
-
         <DataGrid
             SelectedItem="{Binding SelectedUser}"
             Grid.Row="0"

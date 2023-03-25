@@ -42,7 +42,7 @@ namespace Project_UP03.View
 
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            (DataContext as AppMainWindow).DeleteSelectItem();
+            (DataContext as AppMainWindow).DeleteSelectedItem();
         }
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)

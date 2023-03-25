@@ -54,22 +54,16 @@ namespace Project_UP03.View
             {
                 try
                 {
-                    var validateResult = ValidateEntity();
-
-                    if (validateResult.Length>0)
+                    var validateRes = ValidateEntity();
+                    if (validateRes.Length>0)
                     {
-                        MessageBox.Show(validateResult.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show(validateRes.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
-
                     db.User.AddOrUpdate(_user);
-
                     db.SaveChanges();
-
                     MessageBox.Show("Данные успешно сохранены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-
                     (Owner as ApplicationWindow)?.RefreshData();
-
                     Owner.Focus();
                 }
                 catch (Exception ex)
@@ -117,7 +111,6 @@ namespace Project_UP03.View
                     errors.AppendLine("Некорректный Id должности!");
                 }
             }
-
             return errors;
         }
     }

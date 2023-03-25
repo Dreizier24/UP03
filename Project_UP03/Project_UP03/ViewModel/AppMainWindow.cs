@@ -207,36 +207,28 @@ namespace Project_UP03.ViewModel
             taskResult.ForEach(elem => TaskProblem?.Add(elem));
         }
 
-        public void DeleteSelectItem()
+        public void DeleteSelectedItem()
         {
             if (!(SelectedUser is null))
             {
                 using (var db = new HelpDeskDBEntities())
                 {
-
-                    var result = MessageBox.Show("Вы уверены, что хотите удалить данный элемент?" +
-                        "Это действие невозможно отменить.", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-                    if (result == MessageBoxResult.Yes)
+                    var res = MessageBox.Show("Вы уверены, что хотите удалить данный элемент?\nЭто действие невозможно отменить", "Удаление", 
+                        MessageBoxButton.YesNo, MessageBoxImage.Hand);
+                    if (res == MessageBoxResult.Yes)
                     {
                         try
                         {
-                            var entityForDelete = db.User.Where(elem => elem.ID == SelectedUser.ID).FirstOrDefault();
-
-                            db.User.Remove(entityForDelete);
-
+                            var itemForDelete = db.User.Where(elem => elem.ID == SelectedUser.ID).FirstOrDefault();
+                            db.User.Remove(itemForDelete);
                             db.SaveChanges();
-
                             LoadData();
-
-                            MessageBox.Show("Данные успешно удалены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                            MessageBox.Show("Данные удалены", "Удаление", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message, "Информация", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show(ex.Message.ToString(), "Удаление", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
-
                     }
 
                 }
