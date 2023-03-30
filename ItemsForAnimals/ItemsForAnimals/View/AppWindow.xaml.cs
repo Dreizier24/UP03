@@ -21,12 +21,15 @@ namespace ItemsForAnimals.View
     /// </summary>
     public partial class AppWindow : Window
     {
+        private Goods _goods;
+
         public AppWindow(User user)
         {
             InitializeComponent();
 
             this.DataContext = user;
             this.DataContext = new AppMainWindow(user);
+
         }
 
         public void RefreshData()

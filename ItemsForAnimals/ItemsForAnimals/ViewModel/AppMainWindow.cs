@@ -13,6 +13,7 @@ namespace ItemsForAnimals.ViewModel
 {
     public class AppMainWindow : BaseViewModel
     {
+
         private ObservableCollection<User> _user;
 
         public ObservableCollection<User> User
@@ -24,7 +25,7 @@ namespace ItemsForAnimals.ViewModel
                 OnPropertyChanged(nameof(User));
             }
         }
-
+        
         private ObservableCollection<Goods> _goods;
 
         public ObservableCollection<Goods> Goods
@@ -48,70 +49,17 @@ namespace ItemsForAnimals.ViewModel
             }
         }
 
-        private string _productName;
-        private decimal _price;
-        private string _description;
-        private int _storageAmount;
-        private int _currentDiscount;
-        private int _maxDiscount;
-        private int _supplierId;
-        private int _manufacturerId;
-        private byte[] _image;
-        private int _unitId;
-        //private int _goodsId;
-        private int _categoryId;
+        private int _goodsId;
+        public int GoodsId
+        {
+            get => _goodsId;
+            set
+            {
+                _goodsId = value;
+                OnPropertyChanged(nameof(GoodsId));
+            }
+        }
         private string _articul;
-
-
-        public string ProductName
-        {
-            get => _productName;
-            set
-            {
-                _productName = value;
-                OnPropertyChanged(nameof(ProductName));
-            }
-        }
-
-        public string Description
-        {
-            get => _description; 
-            set
-            {
-                _description = value;
-                OnPropertyChanged(nameof(Description));
-            }
-        }
-
-        public decimal Price
-        {
-            get => _price;
-            set
-            {
-                _price = value;
-                OnPropertyChanged(nameof(Price));
-            }
-        }
-       
-        public int StorageAmount
-        {
-            get => _storageAmount; 
-            set
-            {
-                _storageAmount = value;
-                OnPropertyChanged(nameof(StorageAmount));
-            }
-        }
-        public int CurrentDiscount
-        {
-            get => _currentDiscount; 
-            set
-            {
-                _currentDiscount = value;
-                OnPropertyChanged(nameof(CurrentDiscount));
-            }
-
-        }
         public string Articul
         {
             get => _articul;
@@ -121,61 +69,110 @@ namespace ItemsForAnimals.ViewModel
                 OnPropertyChanged(nameof(Articul));
             }
         }
-        //public int GoodsId
-        //{
-        //    get => _goodsId;
-        //    set
-        //    {
-        //        _goodsId = value;
-        //        //OnPropertyChanged(nameof(GoodsId));
-        //    }
-        //}
-        public int ManufacturerId
+        private string _productName;
+        public string ProductName 
+        { 
+            get => _productName; 
+            set 
+            {
+                _productName = value;
+                OnPropertyChanged(nameof(ProductName));
+            } 
+        }
+        private int _unit_id;
+        public int Unit_id
         {
-            get => _manufacturerId;
+            get => _unit_id; 
             set
             {
-                _manufacturerId = value;
-                OnPropertyChanged(nameof(ManufacturerId));
+                _unit_id = value;
+                OnPropertyChanged(nameof(Unit_id));
             }
         }
-        public int SupplierId
+        private decimal _price;
+
+        public decimal Price
         {
-            get => _supplierId;
+            get => _price; 
             set
             {
-                _supplierId = value;
-                OnPropertyChanged(nameof(SupplierId));
+                _price = value;
+                OnPropertyChanged(nameof(Price));
             }
         }
-        public int CategoryId
-        {
-            get => _categoryId;
-            set
-            {
-                _categoryId = value;
-                OnPropertyChanged(nameof(CategoryId));
-            }
-        }
-        public int UnitId
-        {
-            get => _unitId;
-            set
-            {
-                _unitId = value;
-                OnPropertyChanged(nameof(UnitId));
-            }
-        }
-        public int MaxDiscount
-        {
-            get => _maxDiscount;
+        private int _maxDiscount;
+        public int MaxDiscount 
+        { 
+            get => _maxDiscount; 
             set
             {
                 _maxDiscount = value;
                 OnPropertyChanged(nameof(MaxDiscount));
             }
         }
-        public byte[] Image
+        private int _manufacturer_id;
+        public int Manufacturer_id 
+        { 
+            get => _manufacturer_id;
+            set
+            {
+                _manufacturer_id = value;
+                OnPropertyChanged(nameof(Manufacturer_id));
+            }
+        }
+        private int _supplier_id;
+
+        public int Supplier_id 
+        { 
+            get => _supplier_id; 
+            set 
+            {
+                _supplier_id = value;
+                OnPropertyChanged(nameof(Supplier_id));
+            } 
+        }
+        private int _category_id;
+        public int Category_id 
+        { 
+            get => _category_id; 
+            set
+            {
+                _category_id = value;
+                OnPropertyChanged(nameof(Category_id));
+            }
+        }
+        private int _currentDiscount;
+        public int CurrentDiscount 
+        { 
+            get => _currentDiscount; 
+            set
+            {
+                _currentDiscount = value;
+                OnPropertyChanged(nameof(CurrentDiscount));
+            }
+        }
+        private int _storageAmount;
+        public int StorageAmount 
+        { 
+            get => _storageAmount; 
+            set
+            {
+                _storageAmount = value;
+                OnPropertyChanged(nameof(StorageAmount));
+            }
+        }
+        private string _description;
+        public string Description
+        {
+            get => _description;
+            set
+            {
+                _description = value;
+                OnPropertyChanged(nameof(Description));
+            }
+        }
+        private byte[] _image;
+        public byte[] Image 
         {
             get => _image;
             set
@@ -188,8 +185,8 @@ namespace ItemsForAnimals.ViewModel
         public AppMainWindow(User user)
         {
             User = new ObservableCollection<User>();
-            Goods= new ObservableCollection<Goods>();
-
+            Goods = new ObservableCollection<Goods>();
+            
             LoadData();
         }
 
@@ -201,50 +198,6 @@ namespace ItemsForAnimals.ViewModel
             }
             var goodsRes = DBStorage.DBStorage.DB_s.Goods.ToList();
             goodsRes.ForEach(elem => Goods?.Add(elem));
-        }
-
-        public void AddGoods()
-        {
-            Goods _good = new Goods();
-            try
-            {
-                if (_selectedGoods == null)
-                {
-                  
-                    _good.Articul = _articul;
-                    _good.ProductName = _productName;
-                    _good.Manufacturer_id = _manufacturerId;
-                    _good.Price = _price;
-                    _good.Supplier_id = _supplierId;
-                    _good.Category_id = _categoryId;
-                    _good.CurrentDiscount = _currentDiscount;
-                    _good.StorageAmount = _storageAmount;
-                    _good.Description = _description;
-                    _good.MaxDiscount = _maxDiscount;
-                    _good.Unit_id = _unitId;
-                }
-                else
-                {
-                    _good = _selectedGoods;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка добавления товара", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            using (var db = new Trade_Entities())
-            {
-                try
-                {
-                    db.Goods.AddOrUpdate(_good);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка добавления данных", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
 
         public void DeleteSelData()

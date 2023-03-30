@@ -120,7 +120,7 @@
             Margin="10">
             <Label
                 Content="Id категории"/>
-            <TextBox Text="{Binding CategoryId}"/>
+            <TextBox Text="{Binding Category_id}"/>
         </StackPanel>
         
 
@@ -139,7 +139,7 @@
             <Label
                 Content="Id ед. изм."/>
             <TextBox
-                Text="{Binding UnitId}" />
+                Text="{Binding Unit_id}" />
         </StackPanel>
 
         <StackPanel
@@ -166,7 +166,7 @@
             <Label
                 Content="Id производителя"/>
             <TextBox
-                Text="{Binding ManufacturerId}" />
+                Text="{Binding Manufacturer_id}" />
         </StackPanel>
         <StackPanel
             Grid.Row="4"
@@ -175,7 +175,7 @@
             <Label
                 Content="Id поставщика"/>
             <TextBox
-                Text="{Binding SupplierId}" />
+                Text="{Binding Supplier_id}" />
         </StackPanel>
 
         <StackPanel

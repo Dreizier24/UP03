@@ -139,6 +139,27 @@
                 <DataGridTextColumn
                     Header="Действующая скидка"
                     Binding="{Binding CurrentDiscount}"/>
+                <DataGridTextColumn
+                    Header="MaxDiscount"
+                    Binding="{Binding MaxDiscount}"/>
+                <DataGridTextColumn
+                    Header="SupplierId"
+                    Binding="{Binding Supplier_id}"/>
+                <DataGridTextColumn
+                    Header="ManufacturerId"
+                    Binding="{Binding Manufacturer_id}"/>
+                <DataGridTextColumn
+                    Header="CategoryId"
+                    Binding="{Binding Category_id}"/>
+                <DataGridTextColumn
+                    Header="UnitId"
+                    Binding="{Binding Unit_id}"/>
+                <DataGridTextColumn
+                    Header="Image"
+                    Binding="{Binding Image}"/>
+                <DataGridTextColumn
+                    Header="Articul"
+                    Binding="{Binding Articul}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

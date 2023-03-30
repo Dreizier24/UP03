@@ -37,32 +37,35 @@ namespace ItemsForAnimals.View
                 }
             }
 
-            //if (goods is null)
-            //{
-            //    _goods = goods = new Goods();
-            //}
-            //else
-            //{
-            //    _goods = goods;
-            //}
+            if (goods is null)
+            {
+                _goods = goods = new Goods();
+            }
+            else
+            {
+                _goods = goods;
+            }
 
-            //this.DataContext = _goods;
-            this.DataContext = new AppMainWindow(null);
+            this.DataContext = _goods;
         }
 
         private void btnCreateOrRewrite_Click(object sender, RoutedEventArgs e)
         {
-            try
+            using (var db = new Trade_Entities())
             {
-                (DataContext as AppMainWindow).AddGoods();
-                MessageBox.Show("Данные успешно сохранены", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                (Owner as AppWindow)?.RefreshData();
-                Owner.Focus();
-                this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("wedwed");
+                try
+                {
+                    db.Goods.AddOrUpdate(_goods);
+                    db.SaveChanges();
+                    MessageBox.Show("Данные успешно сохранены", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                    (Owner as AppWindow)?.RefreshData();
+                    Owner.Focus();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
